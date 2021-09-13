@@ -1,10 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 
+// Redux
+import { createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+
+// Redux saga
+import createSagaMiddleware from "@redux-saga/core";
+
+import CounterContainer from "./containers/CounterContainer";
+import allReducers from "./reducers";
+import rootSaga from "./sagas/rootSaga";
+import counterReducers from "./reducers/counterReducers";
+
+// Middleware
+const sagaMiddleware = createSagaMiddleware();
+
+let store = createStore(allReducers, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(rootSaga);
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <CounterContainer />
+  </Provider>,
   document.getElementById("root")
 );
