@@ -3,9 +3,7 @@ import { INCREMENT_REQUEST, DECREMENT_REQUEST } from "./actionTypes";
 export const incrementAction = (step) => {
   return {
     type: INCREMENT_REQUEST,
-    payload: {
-      step: step,
-    },
+    payload: { step: step },
   };
 };
 
