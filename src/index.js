@@ -8,9 +8,9 @@ import { Provider } from "react-redux";
 // Redux saga
 import createSagaMiddleware from "@redux-saga/core";
 
-import CounterContainer from "./containers/CounterContainer";
 import allReducers from "./reducers";
 import rootSaga from "./sagas/rootSaga";
+import CounterComponent from "./components/CounterComponent";
 
 // Middleware
 const sagaMiddleware = createSagaMiddleware();
@@ -20,7 +20,7 @@ let store = createStore(allReducers, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
 ReactDOM.render(
   <Provider store={store}>
-    <CounterContainer />
+    <CounterComponent />
   </Provider>,
   document.getElementById("root")
 );

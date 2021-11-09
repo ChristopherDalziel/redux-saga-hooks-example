@@ -1,7 +1,12 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { decrementAction, incrementAction } from "../actions";
 
-const CounterComponent = ({ counter, dispatch }) => {
+const CounterComponent = () => {
+  const counter = useSelector((state) => state.counterReducers);
+
+  const dispatch = useDispatch();
+
   return (
     <div>
       <h1>Counter - Redux Saga Flow Example</h1>
