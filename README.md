@@ -2,6 +2,10 @@
 
 A simple counter application that uses React-Redux to create a global store and Redux-Saga to update it asynchronously.
 
+![react redux-saga flow](https://miro.medium.com/max/720/1*m-JBgCJvTIPzJAn2VGBQQg.png)
+
+[Step by step explination tutorial](https://christopherdalziel.medium.com/react-redux-saga-w-hooks-6b897186851)
+
 ## How to run
 
 1. clone repo

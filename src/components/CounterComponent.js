@@ -4,7 +4,6 @@ import { decrementAction, incrementAction } from "../actions";
 
 const CounterComponent = () => {
   const counter = useSelector((state) => state.counterReducers);
-
   const dispatch = useDispatch();
 
   return (
